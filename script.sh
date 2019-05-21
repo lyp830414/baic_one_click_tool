@@ -9,8 +9,8 @@ G_config='{
 	"G_base_info": {
 		"cli_path":"/home/lyp/code_baic_chain/Baic-Chain/build/programs/baic_cli",
 		"data_path":"/home/lyp/code_baic_chain/Baic-Chain/build/programs/nodeos/lypdata",
-		"wallet_url":"http://127.0.0.1:20188", 
-		"baic_cli":"baic_cli --wallet-url http://127.0.0.1:20188 --url http://127.0.0.1:20188"
+		"wallet_url":"", 
+		"baic_cli":"baic_cli --url http://127.0.0.1:20188"
 	},
 	"G_account_info": {
 				"baic":{

@@ -670,7 +670,7 @@ function check_amount_valid() {
 function print_help() {
 
 	echo "parameters:"
-	echo "init | get | publish | newaccount | transfer | issue_token | --conf"
+	echo "init | get | publish | newaccount | transfer | issue_token | pwd | unlock | --conf"
 }
 
 function transfer_cash() {
@@ -1050,7 +1050,14 @@ do
 			base_new_wallet $from $from_owner_private_key $from_active_private_key
 			#base_new_wallet $to_owner_private_key $to_active_private_key
 			transfer_cash $transfer_contract $from $to "$amount" "$memo"
-		;;	
+		;;
+		pwd)
+			cat /tmp/wallet2.txt
+		;;
+		unlock)
+			walletpwd=`cat /tmp/wallet2.txt|awk 'END {print}'|sed 's/"//g'`
+			$cli_path/./$baic_cli wallet unlock --password $walletpwd
+		;;
 		*) #default case
 			echo "DEFAULT!"
 			print_help
